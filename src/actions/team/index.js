@@ -13,5 +13,8 @@ export const team = () => {
 }
 
 const createProject = data => {
-  loading(true, 'navigation-nav-tabContent')
+  loading(true, 'navigation-nav-tabContent');
+  setTimeout(() => {
+    //loading(false, 'navigation-nav-tabContent');
+  }, 6000);
 }

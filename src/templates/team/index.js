@@ -20,7 +20,7 @@ const projectTypesTemplate = () => `
           <i class="fad fa-${Object.values(projectTypes)[i].icon}"></i>
           ${Object.values(projectTypes)[i].label}
         </button>
-      `)}
+      `).join('')}
     </div>
   </div>
 `

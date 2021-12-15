@@ -4,7 +4,7 @@ import { getFirestore, collection, getDocs } from "firebase/firestore";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 
-//const auth = getAuth();
+// const auth = getAuth();
 const userId = 'exNiGc1odYTRflvPGr8Y';
 
 initializeApp({

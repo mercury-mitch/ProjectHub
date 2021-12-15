@@ -36,6 +36,7 @@
 
 #navigation .navigation-content .tab-content {
   padding: 15px;
+  min-height: calc(80vh - 50px);
 }
 
 #navigation .navigation-content #navigation-list-tab {
