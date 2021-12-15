@@ -1,0 +1,14 @@
+#project  .project-item {
+  border: 1px solid var(--secondary);
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#project  .project-item:hover {
+  background-color: var(--secondary);
+}
+
+#project  .project-item h1 {
+  margin: 0;
+}

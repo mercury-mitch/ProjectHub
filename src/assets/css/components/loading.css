@@ -1,0 +1,25 @@
+.loading {
+  position: absolute;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading #loading-message {
+  max-width: 490px;
+  text-align: center;
+  opacity: 0.8;
+  font-style: italic;
+}
+
+.loading #loading-message.fading {
+  animation: fading 600ms 1 forwards;
+}
+
+@keyframes fading {
+  0% { opacity: 1 }
+  35% { opacity: 0 }
+  65% { opacity: 0 }
+  100% { opacity: 1 }
+}

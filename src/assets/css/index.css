@@ -1,0 +1,17 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css");
+@import 'components/navigation.css';
+@import 'components/team.css';
+@import 'components/project.css';
+@import 'components/loading.css';
+
+
+/* WebpackTemplate color scheme */
+:root {
+  --primary: #253551;
+  --secondary: #f1f1ee;
+  --shadow: #9da5b430;
+}
+
+body {
+  font-family: 'Poppins', serif;
+}

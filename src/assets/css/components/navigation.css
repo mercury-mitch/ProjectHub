@@ -1,0 +1,84 @@
+#navigation .navbar {
+  background-color: var(--secondary) !important;
+}
+
+#navigation .navbar-toggler {
+  border: none;
+  outline: none;
+}
+
+#navigation .navbar i,
+#navigation .navbar h5 {
+  margin: 0.6rem 0;
+}
+
+#navigation .navbar i {
+  font-size: 1.2em;
+  position: relative;
+  top: 2px;
+  margin-right: 5px !important;
+}
+
+#navigation .navbar-row {
+  width: 100%
+}
+
+#navigation .navbar-row .nav-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#navigation .navigation-content {
+  min-height: 100vh;
+  width: 100%;
+}
+
+#navigation .navigation-content .tab-content {
+  padding: 15px;
+}
+
+#navigation .navigation-content #navigation-list-tab {
+  padding-left: 15px;
+}
+
+#navigation .navigation-content .navigation-list {
+  background-color: var(--secondary);
+  display: none;
+}
+
+#navigation .navigation-content .navigation-list .list-group-item {
+  margin: .6rem 0;
+  border: none;
+  border-radius: 8px;
+  outline: none !important;
+  cursor: pointer;
+}
+
+#navigation .navigation-content .navigation-list .list-group-item {
+  background-color: var(--secondary);
+}
+
+#navigation .navigation-content .navigation-list .list-group-item:hover {
+  background-color: var(--shadow);
+}
+
+#navigation .navigation-content .navigation-list .list-group-item.active {
+  background-color: var(--primary);
+}
+
+@media (min-width: 768px) {
+  #navigation .navbar {
+    padding: 0rem 1rem;
+  }
+  
+  #navigation .navigation-content .navigation-list {
+    display: block;
+  }  
+}
+
+@media (min-width: 992px) {
+  #navigation .navbar {
+    padding: 0rem 0rem;
+  }
+}
