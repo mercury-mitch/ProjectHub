@@ -4,6 +4,8 @@ import { actions }          from '../../actions'
 
 
 export const mountHome = () => {
+  document.getElementById('root').innerHTML = '';
+  
   addElementToRoot('home')
     .then(() => {
       addElementToRoot('project')

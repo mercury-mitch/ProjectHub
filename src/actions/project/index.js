@@ -6,7 +6,7 @@ import { actions }          from "..";
 
 export const project = () => {
   // Start Loading
-  loading(true, 'project');
+  //loading(true, 'project');
 
   // Fetch Projects
   getProjects().then(data => {
@@ -34,6 +34,6 @@ export const project = () => {
     });
     
     // Stop Loading
-    loading(false, 'project');
+    //loading(false, 'project');
   });
 }

@@ -1,16 +1,20 @@
+import { mountHome } from '../../mounts/home/index.js';
 import { actions } from '../index.js'
 
 export const navigation = project => {
-  console.log(project)
   const navListItems = document.querySelectorAll('#navigation-list-tab button');
   const navListContentItems = document.querySelectorAll('#navigation-nav-tabContent li');
   const elActiveProject = document.getElementById('active-project');
+  const elAllProjectsBtn = document.getElementById('all-projects-btn');
 
   // Trigger initial actions
   actions.team();
 
   // Set project info
   elActiveProject.innerText = project.name;
+
+  //
+  elAllProjectsBtn.onclick = () => mountHome();
 
   navListItems.forEach(navItem => {
     document.getElementById(navItem.id)

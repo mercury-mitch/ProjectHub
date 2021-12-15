@@ -107,3 +107,16 @@
     padding: 0rem 0rem;
   }
 }
+
+#navigation #all-projects-btn:hover {
+  background-color: var(--primary);
+  color: #fff;
+  cursor: pointer;
+}
+
+#navigation #all-projects-btn {
+  border: 1px solid var(--primary);
+  background: #fff;
+  border-radius: 8px;
+  margin: 0 0 15px;
+}

@@ -48,6 +48,7 @@ export const navigation = () => `
             <i class="fad fa-briefcase"></i>
             <h5 id="active-project"></h5>
           </div>
+          <button type="button" id="all-projects-btn">All Projects</button>
         </div>
     </div>
     <div class="col-sm-12 col-md-8 col-lg-9 tab-content-col">
