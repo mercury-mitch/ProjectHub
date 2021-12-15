@@ -46,6 +46,26 @@
 #navigation .navigation-content .navigation-list {
   display: none;
   border-right: 1px solid var(--secondary);
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#navigation .navigation-content .navigation-list .project-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  padding: 15px;
+}
+
+#navigation .navigation-content .navigation-list .project-card i {
+  margin-right: 15px;
+  position: relative;
+  top: -3px;
+}
+
+#navigation .navigation-content .navigation-list .project-card h5 {
+  font-size: 1rem;
 }
 
 #navigation .navigation-content .navigation-list .list-group-item {
@@ -78,7 +98,7 @@
   }
   
   #navigation .navigation-content .navigation-list {
-    display: block;
+    display: flex;
   }  
 }
 

@@ -3,6 +3,9 @@
   padding: 0.8rem 1rem;
   border-radius: 8px;
   cursor: pointer;
+  margin: 15px;
+  display: flex;
+  justify-content: space-between;
 }
 
 #project  .project-item:hover {
@@ -11,4 +14,22 @@
 
 #project  .project-item h1 {
   margin: 0;
+}
+
+#project .project-item i {
+  font-size: 1.4rem;
+  margin: 5px 10px 5px;
+  color: gray;
+}
+
+#project .project-item i:hover {
+  color: var(--primary);
+}
+
+#project .project-item i.attention {
+  color: #ff6e6e;
+}
+
+#project .project-item i.attention:hover {
+  color: #ff2424;
 }

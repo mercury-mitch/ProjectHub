@@ -5,7 +5,6 @@ import { marketingTemplate } from '../marketing'
 
 const navigationItems = {
   team:      { title: 'Team',      icon: 'users-crown', content: teamTemplate() },
-  project:   { title: 'Projects',  icon: 'tasks', content: projectTemplate() },
   marketing: { title: 'Marketing', icon: 'megaphone', content: marketingTemplate() }
 }
 
@@ -43,6 +42,12 @@ export const navigation = () => `
             ${Object.values(navigationItems)[i].title}
           </button>
         `).join('')}
+        </div>
+        <div class="list-group" id="navigation-list-project" role="tablist">
+          <div class="project-card">
+            <i class="fad fa-briefcase"></i>
+            <h5 id="active-project"></h5>
+          </div>
         </div>
     </div>
     <div class="col-sm-12 col-md-8 col-lg-9 tab-content-col">

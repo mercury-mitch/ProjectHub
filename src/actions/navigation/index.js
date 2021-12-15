@@ -1,11 +1,16 @@
 import { actions } from '../index.js'
 
-export const navigation = () => {
+export const navigation = project => {
+  console.log(project)
   const navListItems = document.querySelectorAll('#navigation-list-tab button');
   const navListContentItems = document.querySelectorAll('#navigation-nav-tabContent li');
+  const elActiveProject = document.getElementById('active-project');
 
   // Trigger initial actions
   actions.team();
+
+  // Set project info
+  elActiveProject.innerText = project.name;
 
   navListItems.forEach(navItem => {
     document.getElementById(navItem.id)

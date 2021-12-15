@@ -1,13 +1,14 @@
-import { navigation } from "./navigation";
-
-import { teamTemplate }      from './team';
-import { projectTemplate }   from './project';
-import { marketingTemplate } from './marketing';
+import { navigation }          from "./navigation";
+import { marketingTemplate }   from './marketing';
+import { teamTemplate }        from './team';
+import { projectTemplate, 
+         projectItemTemplate } from './project';
 
 
 export const templates = {
   navigation,
   teamTemplate,
   projectTemplate,
+  projectItemTemplate,
   marketingTemplate
 }
