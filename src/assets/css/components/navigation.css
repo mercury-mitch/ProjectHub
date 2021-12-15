@@ -44,8 +44,8 @@
 }
 
 #navigation .navigation-content .navigation-list {
-  background-color: var(--secondary);
   display: none;
+  border-right: 1px solid var(--secondary);
 }
 
 #navigation .navigation-content .navigation-list .list-group-item {
@@ -58,6 +58,10 @@
 
 #navigation .navigation-content .navigation-list .list-group-item {
   background-color: var(--secondary);
+}
+
+#navigation .navigation-content .navigation-list .list-group-item i {
+  margin-right: 10px;
 }
 
 #navigation .navigation-content .navigation-list .list-group-item:hover {
