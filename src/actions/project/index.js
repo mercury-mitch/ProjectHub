@@ -13,7 +13,7 @@ export const project = () => {
       <div class="project-item">
         <h5>${project.name}</h5>
       </div>
-    `);
+    `).join('');
     
     // Stop Loading
     loading(false, 'navigation-nav-tabContent');
