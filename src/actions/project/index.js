@@ -83,7 +83,21 @@ export const project = () => {
       elProject.dataset.name = project.name;
       elProject.innerHTML = templates.projectItemTemplate(project);
       elProject.onclick = e => {
-        openProject(project, [...e.target.classList][1]?.slice(3))
+
+        const initialActions = {
+          tachometeralt: "dashboard",
+          userscrown: "team",
+          megaphone: "marketing",
+          cog: "settings"
+        }
+        
+        let initialAction = 'dashboard';
+
+        if (initialActions[[...e.target.classList][1]?.slice(3).replace('-', '')]) {
+          initialAction = initialActions[[...e.target.classList][1]?.slice(3).replace('-', '')];
+        }
+
+        openProject(project, initialAction);
       };
 
       elProjectList.appendChild(elProject);

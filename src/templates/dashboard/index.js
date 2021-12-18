@@ -1,7 +1,7 @@
 export const dashboardTemplate = () => `
   <ul class="nav nav-tabs">
     <li><a class="active" data-toggle="tab" href="#roadmap">Road Map</a></li>
-    <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
+    <li><a data-toggle="tab" href="#menu1">Pie Chart</a></li>
     <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
     <li><a data-toggle="tab" href="#menu3">Menu 3</a></li>
   </ul>
@@ -9,17 +9,17 @@ export const dashboardTemplate = () => `
   <div class="tab-content">
     <div id="roadmap" class="tab-pane fade in active show">
       <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-12">
           <div id="roadmapChart"></div>
         </div>
-        <div class="col-lg-6">
-
+      </div>
+      </div>
+    <div id="menu1" class="tab-pane fade">
+      <div class="row">
+        <div class="col-lg-12">
+          <div id="marketingCampaignChart"></div>
         </div>
       </div>
-    </div>
-    <div id="menu1" class="tab-pane fade">
-      <h3>Menu 1</h3>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
     <div id="menu2" class="tab-pane fade">
       <h3>Menu 2</h3>

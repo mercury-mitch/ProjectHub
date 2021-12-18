@@ -5,8 +5,8 @@ body {
 .hide { display: none !important; }
 
 .container {
-  padding-top: 15px;
   max-width: 1200px !important;
+  padding: 0;
 }
 
 button.primary {

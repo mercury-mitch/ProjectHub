@@ -1,80 +1,19 @@
 import { unique } from '../../MiscHelpers'
 
-// Roadmap Data Schema
-//
-//
-// const example = [
-//   {
-//     category: "Category 1",
-//     task: "Task 1",
-//     start: "2021-12-22",
-//     end: "2022-01-12"
-//   },
-//   {
-//     category: "Category 1",
-//     task: "Task 2",
-//     start: "2022-01-12",
-//     end: "2022-02-09"
-//   },
-//   {
-//     category: "Category 1",
-//     task: "Task 3",
-//     start: "2022-02-09",
-//     end: "2022-02-22",
-//   },
-//   {
-//     category: "Category 2",
-//     task: "Task 1",
-//     start: "2022-02-09",
-//     end: "2022-02-22",
-//   },
-//   {
-//     category: "Category 2",
-//     task: "Task 2",
-//     start: "2022-01-12",
-//     end: "2022-02-09"
-//   },
-//   {
-//     category: "Category 3",
-//     task: "Task 1",
-//     start: "2021-12-22",
-//     end: "2022-02-09"
-//   },
-//   {
-//     category: "Category 3",
-//     task: "Task 2",
-//     start: "2021-12-22",
-//     end: "2022-02-09"
-//   },
-//   {
-//     category: "Category 3",
-//     task: "Task 3",
-//     start: "2021-12-22",
-//     end: "2022-02-09"
-//   },
-//   {
-//     category: "Category 3",
-//     task: "Task 4",
-//     start: "2021-12-22",
-//     end: "2022-02-09"
-//   },
-// ]
-
-
-export const Gantt = (data, target) => {
+export const gantt = (data, target) => {
   const root = am5.Root.new(target);
   root.dateFormatter.setAll({
     dateFormat: "yyyy-MM-dd",
     dateFields: ["valueX", "openValueX"]
   });
-  
-  
+
+
   // Set themes
   root.setThemes([
     am5themes_Animated.new(root)
   ]);
-  
-  
+
+
   // Create chart
   var chart = root.container.children.push(am5xy.XYChart.new(root, {
     panX: false,
@@ -83,14 +22,14 @@ export const Gantt = (data, target) => {
     wheelY: "zoomX",
     layout: root.verticalLayout
   }));
-  
+
   var colors = chart.get("colors");
 
   const dataDate = date => {
     const year = parseInt(date.split('-')[0]);
     const month = parseInt(date.split('-')[1]);
     const day = parseInt(date.split('-')[2]);
-    
+
     return new Date(year, month, day).getTime();
   }
 
@@ -108,10 +47,19 @@ export const Gantt = (data, target) => {
       fill: am5.Color.brighten(colors.getIndex(categoryIdx), taskIdx * 0.4)
     }
   })
+
+  let height = categories.length * 70
   
+  if (categories.length < 5) {
+    height = categories.length * 120
+  }
+  else if (categories.length < 10) {
+    height = categories.length * 100
+  }
+
   const elChart = document.getElementById(target);
-  elChart.style.height = categories.length * 75 + 'px';
-  
+  elChart.style.height = height + 'px';
+
   // Create axes
   // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
   var yAxis = chart.yAxes.push(
@@ -121,17 +69,17 @@ export const Gantt = (data, target) => {
       tooltip: am5.Tooltip.new(root, {})
     })
   );
-  
+
   yAxis.data.setAll(categories.map(c => ({ category: c })));
-  
+
   var xAxis = chart.xAxes.push(
     am5xy.DateAxis.new(root, {
       baseInterval: { timeUnit: "minute", count: 1 },
       renderer: am5xy.AxisRendererX.new(root, {})
     })
   );
-  
-  
+
+
   // Add series
   // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
   var series = chart.series.push(am5xy.ColumnSeries.new(root, {
@@ -142,19 +90,19 @@ export const Gantt = (data, target) => {
     categoryYField: "category",
     sequencedInterpolation: true
   }));
-  
+
   series.columns.template.setAll({
     templateField: "columnSettings",
     strokeOpacity: 0,
     strokeWidth: 50,
     tooltipText: "{task}:\n[bold]{openValueX}[/] - [bold]{valueX}[/]"
   });
-  
+
   series.data.setAll(data);
-  
+
   // Add scrollbars
   // chart.set("scrollbarX", am5.Scrollbar.new(root, { orientation: "horizontal" }));
-  
+
   // Make stuff animate on load
   // https://www.amcharts.com/docs/v5/concepts/animations/
   series.appear();

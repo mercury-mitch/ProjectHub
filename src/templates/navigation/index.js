@@ -28,7 +28,9 @@ const navigationItems = {
 }
 
 export const navigation = () => `
-  <h3 class="project-name desktop" data-role="dashboard-project-name"></h3>
+  <div>
+    <h3 class="project-name desktop" data-role="dashboard-project-name"></h3>
+  </div>
 
   <div class="navigation-content">
     <div class="navigation-list-container">
@@ -79,4 +81,14 @@ export const navigation = () => `
       </ul>
     </div>
   </div>
+`
+
+export const mobileNavigation = () => `
+  <ul>
+    ${Object.keys(navigationItems).map((item, i) => `
+      <li id="${item}">
+        ${Object.values(navigationItems)[i].title}
+      </li>
+    `).join('')}
+  </ul>
 `

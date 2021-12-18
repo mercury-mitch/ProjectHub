@@ -1,5 +1,7 @@
-import { Gantt } from "./gantt"
+import { gantt }       from "./gantt"
+import { variablePie } from "./variablePie"
 
 export const MercuryCharts = {
-  Gantt
+  gantt,
+  variablePie
 }
