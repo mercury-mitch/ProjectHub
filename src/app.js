@@ -1,6 +1,6 @@
 ﻿/*!
- * OnSchedJ (http://onsched.com)
- * Copyright 2014-2020 OnSched
+ * MercuryHub (http://mercury-hub.org)
+ * Copyright 2014-2020 Mercury Hub
  */
 
 'use strict';

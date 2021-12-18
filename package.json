@@ -1,11 +1,10 @@
 {
-  "name": "WebpackTemplate",
-  "version": "0.1.0-beta",
-  "description": "Front end module for rapidly deploying OnSched to your app",
-  "repository": "https://github.com/Onsched/WebpackTemplate",
-  "author": "Mitchell Paddon <mitchell@onsched.com>",
-  "license": "MIT",
-  "private": false,
+  "name": "projecthub",
+  "version": "1",
+  "description": "Front end module for rapidly deploying Mercury to your app",
+  "repository": "https://github.com/mercury-mitch/ProjectHub",
+  "author": "MercuryMitch <mitch@mercury-hub.org>",
+  "private": true,
   "scripts": {
     "build": "webpack --config webpack.prod.config.js",
     "start": "webpack-dev-server --open"
