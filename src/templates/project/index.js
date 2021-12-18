@@ -37,13 +37,15 @@ export const projectItemTemplate = project => `
 export const newProjectTemplate = () => `
   <div class="new-project">
     <form id="new-project-form">
-      <h4>Name your project</h4>
-      <input type="text" id="new-project-name" />
-      
-      <div class="new-project-actions">
-        <button type="button" id="new-project-name-cancel" class="flat">cancel</button>
-        <button type="submit" id="new-project-name-next" class="primary">next</button>
+      <div class="projects-header">
+        <h5>Name your project</h5>
+        <div class="new-project-actions">
+          <button type="button" id="new-project-name-cancel" class="flat">Cancel</button>
+          <button type="submit" id="new-project-name-next" class="primary">Next</button>
+        </div>
       </div>
+      
+      <input type="text" id="new-project-name" />
     </form>
   </div>
 `
@@ -59,7 +61,9 @@ export const projectTypes = {
 
 export const projectTypesTemplate = () => `
   <div id="team">
-    <h3>Project Types</h3>
+    <div class="projects-header">
+      <h5>Project Types</h5>
+    </div>
     <div class="project-type-list">
       ${Object.keys(projectTypes).map((projectType, i) => `
         <button class="primary" id="${projectType}-btn">

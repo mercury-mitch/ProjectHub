@@ -4,6 +4,7 @@ import { actions } from '../index.js'
 
 
 export const navigation = (project, initialAction) => {
+  console.log(initialAction)
   const navListItems = document.querySelectorAll('#navigation-list-tab button');
   const navListContentItems = document.querySelectorAll('#navigation-nav-tabContent li');
   const elAllProjectsBtn = document.getElementById('all-projects-btn');
@@ -12,6 +13,7 @@ export const navigation = (project, initialAction) => {
   let selected = 'dashboard';
   
   if (initialAction) {
+    selected = initialAction;
     actions[selected](project);
   }
   else {

@@ -1,5 +1,7 @@
 import { actions } from "../../actions";
 import { templates } from "../../templates";
+import { addElementToRoot } from "../../utils/RootHelpers";
+
 
 const toggleHmbgr = () => {
   const hmbgrIcon = document.querySelector('#navigation-list-hamburger i');
@@ -45,7 +47,18 @@ export const mountMobileNavigation = project => {
     item.onclick = e => {
       elRoot.classList.toggle('mobile-nav');
       toggleHmbgr();
-      actions.navigation(project, e.target.id);
     }
+
+    item.children[0].children.forEach(mobileNavOption => {
+      mobileNavOption.onclick = () => {
+        // Open Navigation to Project selected
+        addElementToRoot('navigation')
+          .then(elNavigation => {
+            elNavigation.innerHTML = templates.navigation();
+            actions.navigation(project, mobileNavOption.id);
+            toggleHmbgr();
+          })
+      }
+    })
   })
 }

@@ -76,3 +76,7 @@
 #project .project-item i.attention:hover {
   color: #ff2424;
 }
+
+#project .new-project input {
+  max-width: 500px;
+}

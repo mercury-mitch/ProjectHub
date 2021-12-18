@@ -1,0 +1,33 @@
+button.primary,
+button.flat {
+  padding: 0.6em 1.8704em;
+  border: none;
+  margin: 0 0.6rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  outline: none !important;
+  border-radius: 6px;
+}
+
+button.primary:hover,
+button.flat:hover {
+  opacity: .8;
+  cursor: pointer;
+}
+
+button.primary {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+button.flat {
+  background-color: #fff;
+  color: var(--primary);
+}
+
+form input {
+  width: 100%;
+  border: 1px solid var(--secondary);
+  border-radius: 6px;
+  padding: 0.55rem;
+}
