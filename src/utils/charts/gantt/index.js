@@ -61,7 +61,7 @@ import { unique } from '../../MiscHelpers'
 // ]
 
 
-export const RoadMap = (data, target) => {
+export const Gantt = (data, target) => {
   const root = am5.Root.new(target);
   root.dateFormatter.setAll({
     dateFormat: "yyyy-MM-dd",

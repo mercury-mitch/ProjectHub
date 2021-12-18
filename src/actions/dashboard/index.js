@@ -9,7 +9,7 @@ export const dashboard = project => {
   
   // Load the Roadmap Chart
   MercuryHub.GET(`projects/${project.id}/tasks`)
-            .then(response => MercuryCharts.RoadMap(response, 'roadmapChart'));
+            .then(response => MercuryCharts.Gantt(response, 'roadmapChart'));
   
   // 
 }

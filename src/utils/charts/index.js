@@ -1,5 +1,5 @@
-import { RoadMap } from "./roadmap"
+import { Gantt } from "./gantt"
 
 export const MercuryCharts = {
-  RoadMap
+  Gantt
 }
