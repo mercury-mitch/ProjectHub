@@ -1,11 +1,19 @@
 // Initialize Cloud Firestore through Firebase
-import { initializeApp } from "firebase/app"
-import { getFirestore, collection, getDocs } from "firebase/firestore"; 
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { initializeApp }               from "firebase/app"
+//import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { getFirestore, 
+         collection, 
+         getDocs, 
+         setDoc,
+         addDoc }                         from "firebase/firestore"; 
 
 
-// const auth = getAuth();
-const userId = 'exNiGc1odYTRflvPGr8Y';
+const userId = sessionStorage.getItem('x-merc-jspx-sn');
+
+// Redirect user to login page
+if (!userId) {
+  window.location.replace(window.location.origin + '/login')
+}
 
 initializeApp({
   apiKey: 'AIzaSyDNYZKIlbxP1SSgfZxb77_UbkVlKxhuPyc',
@@ -15,18 +23,39 @@ initializeApp({
 
 const db = getFirestore();
 
-export const getProjects = async () => {
-  const projectsCollection = collection(db, `users/${userId}/projects`);
-  const querySnapshot = await getDocs(projectsCollection);
-
+export const GET = async route => {
+  const targetCollection = collection(db, `users/${userId}/${route}`);
+  
+  const querySnapshot = await getDocs(targetCollection);
+  
   var data = [];
   
   querySnapshot.forEach((document) => {
     let obj = document.data();
-    console.log('doc', obj)
     obj.id = document.id;
     data.push(obj);
   });
-
+  
   return data;
+}
+
+export const POST = async (route, payload) => {
+  await addDoc(collection(db, `users/${userId}/${route}`), payload);
+  
+  return payload;
+}
+
+export const PUT = async (route, payload) => {
+  const docRef = collection(db, 'users/' + userId + route);
+  const request = await setDoc(docRef, payload, { merge: true });
+  request.then(response => {
+    return response;
+  })
+
+}
+
+export const MercuryHub = {
+  GET,
+  POST,
+  PUT
 }

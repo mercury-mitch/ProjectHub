@@ -1,3 +1,3 @@
-export const marketingTemplate = () => `
+export const marketingTemplate = (project) => `
   Marketing Content
 `
