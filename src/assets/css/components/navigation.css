@@ -1,3 +1,19 @@
+.project-name {
+  font-size: 1rem;
+  display: inline-flex;
+  justify-content: flex-end;
+  padding: 15px 0;
+  white-space: nowrap;
+  align-items: center;
+  margin-bottom: 0;
+  font-weight: 500;
+  cursor: default;
+}
+
+.project-name.desktop {
+  display: none;
+}
+
 #navigation .navbar {
   background-color: var(--secondary) !important;
 }
@@ -30,8 +46,10 @@
 }
 
 #navigation .navigation-content {
-  min-height: 100vh;
+  min-height: calc(100vh - 70px);
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 #navigation .navigation-content .tab-content {
@@ -39,47 +57,107 @@
   min-height: calc(80vh - 50px);
 }
 
-#navigation .navigation-content #navigation-list-tab {
-  padding-left: 15px;
+#navigation .navigation-content .tab-content-col {
+  width: 100%
+}
+  
+#navigation .navigation-content .navigation-list-container {
+  display: flex;
+  justify-content: space-between;
 }
 
 #navigation .navigation-content .navigation-list {
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+#navigation .navigation-content .navigation-list .list-group {
+  flex-direction: row;
+  display: inline-flex;
+}
+
+#navigation .navigation-content .navigation-list .navigation-list-item-title {
   display: none;
-  border-right: 1px solid var(--secondary);
 }
 
 #navigation .navigation-content .navigation-list .list-group-item {
   margin: .6rem 0;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   outline: none !important;
   cursor: pointer;
+  display: none;
+  font-size: 1.4rem;
+}
+
+#navigation .navigation-content .navigation-list .list-group-item#navigation-list-hamburger {
+  display: block;
 }
 
 #navigation .navigation-content .navigation-list .list-group-item {
-  background-color: var(--secondary);
-}
-
-#navigation .navigation-content .navigation-list .list-group-item i {
-  margin-right: 10px;
+  background-color: #fff;
+  color: var(--secondary-dark);
+  width: fit-content !important;
 }
 
 #navigation .navigation-content .navigation-list .list-group-item:hover {
-  background-color: var(--shadow);
+  color: var(--primary);
 }
 
 #navigation .navigation-content .navigation-list .list-group-item.active {
-  background-color: var(--primary);
+  color: var(--primary);
+  position: relative;
+}
+
+#navigation #all-projects-btn:hover {
+  cursor: pointer;
+  color: var(--primary);
+}
+
+#navigation #all-projects-btn {
+  padding: 0 20px 20px;
 }
 
 @media (min-width: 768px) {
+  .project-name {
+    width: 100%;
+  }
+
+  .project-name.mobile {
+    display: none;
+  }
+
+  .project-name.desktop {
+    display: inline-flex !important;
+  }
+
   #navigation .navbar {
     padding: 0rem 1rem;
   }
-  
+
+  #navigation .navigation-content {
+    flex-direction: row;  
+  }
+
   #navigation .navigation-content .navigation-list {
+    display: flex;
+    height: calc(100vh - 70px);
+    flex-direction: column;
+    text-align: center;
+    width: 75px;
+  } 
+  
+  #navigation .navigation-content .navigation-list .list-group {
+    flex-direction: column;
+  }
+
+  #navigation .navigation-content .navigation-list .list-group .list-group-item {
     display: block;
-  }  
+  }
+
+  #navigation .navigation-content .navigation-list .list-group .list-group-item#navigation-list-hamburger {
+    display: none;
+  }
 }
 
 @media (min-width: 992px) {

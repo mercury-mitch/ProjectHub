@@ -4,13 +4,11 @@ import { actions }          from '../../actions'
 
 
 export const mountHome = () => {
-  addElementToRoot('home')
-    .then(() => {
-      // Start Mounting Functions Here
-      addElementToRoot('navigation')
-        .then(elNavigation => {
-          elNavigation.innerHTML = templates.navigation();
-          actions.navigation();
-        })
+  document.getElementById('root').innerHTML = '';
+  
+  addElementToRoot('project')
+    .then(elProject => { 
+      elProject.innerHTML = templates.projectTemplate();
+      actions.project();
     })
 }

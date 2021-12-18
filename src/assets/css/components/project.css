@@ -1,14 +1,78 @@
+#project  .projects-header {
+  border-bottom: 1px solid var(--secondary);
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#project  .projects-header .projects-header-actions {
+  display: flex;
+  align-items: center;
+}
+
+#project  .projects-header h5 {
+  margin: 0;
+  font-weight: 300;
+}
+
+#project  .projects-header input::placeholder {
+  color: var(--secondary);
+  font-weight: 200;
+}
+
+#project  .projects-header input {
+  width: 100%;
+  border: 1px solid var(--secondary);
+  border-radius: 6px;
+  padding: .55rem 4rem .55rem .55rem;
+}
+
+#project  .projects-header i {
+  position: absolute;
+  margin-left: -30px;
+  margin-top: 13px;
+  color: var(--secondary);
+}
+
 #project  .project-item {
   border: 1px solid var(--secondary);
-  padding: 0.8rem 1rem;
-  border-radius: 8px;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
   cursor: pointer;
+  margin: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-#project  .project-item:hover {
-  background-color: var(--secondary);
+#project  .project-item:hover,
+#project  .projects-header input:hover,
+#project  .projects-header input:focus,
+#project  .projects-header input:active {
+  outline: none !important;
+  border-color: var(--primary);
 }
 
-#project  .project-item h1 {
+#project  .project-item h5 {
+  font-size: 1rem;
   margin: 0;
+}
+
+#project .project-item i {
+  margin: 5px 10px 5px;
+  color: gray;
+}
+
+#project .project-item i:hover {
+  color: var(--primary);
+}
+
+#project .project-item i.attention {
+  color: #ff6e6e;
+}
+
+#project .project-item i.attention:hover {
+  color: #ff2424;
 }
