@@ -10,18 +10,14 @@
 }
 
 #team .project-type-list button {
-  padding: 0.5rem 1.4rem;
-  border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   margin: .6rem;
-  font-size: 1rem;
-  outline: none !important;
   background-color: var(--secondary);
+  color: unset;
 }
 
 #team .project-type-list button:hover {
   background-color: var(--shadow);
-  cursor: pointer;
 }
 
 #team .project-type-list button i {

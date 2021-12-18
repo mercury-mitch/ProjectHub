@@ -3,15 +3,15 @@
 @import 'components/team.css';
 @import 'components/project.css';
 @import 'components/loading.css';
+@import 'components/dashboard.css';
+@import 'components/utility.css';
 
 
 /* WebpackTemplate color scheme */
 :root {
-  --primary: #253551;
-  --secondary: #f1f1ee;
-  --shadow: #9da5b430;
-}
-
-body {
-  font-family: 'Poppins', serif;
+  --primary: #6c77fb;
+  --secondary: #ccd1dd;
+  --secondary-dark: #929bad;
+  --text-dark: #404044;
+  --shadow: #e4e8f1;
 }

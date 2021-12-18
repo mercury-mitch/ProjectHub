@@ -1,22 +1,24 @@
 export const loading = (action, target, messages) => {
   if (action && !document.querySelector(`#${target} .loading`)) {
     const elTarget = document.getElementById(target);
-    const elLoading = document.createElement('DIV');
-    // Loading is ACTIVE
-    elLoading.className = 'loading';
-    elLoading.innerHTML = `<div id="loading-message"></div><div id="loading-spinner"></div>`;
+    if (elTarget) {
+      const elLoading = document.createElement('DIV');
+      // Loading is ACTIVE
+      elLoading.className = 'loading';
+      elLoading.innerHTML = `<div id="loading-message"></div><div id="loading-spinner"></div>`;
+      
+      elLoading.style.top = `${elTarget.offsetTop}px`;
+      elLoading.style.left = `${elTarget.offsetLeft}px`;
+      elLoading.style.height = `${elTarget.clientHeight > 150 ? elTarget.clientHeight : 150}px`;
+      elLoading.style.width = `${elTarget.clientWidth}px`;
     
-    elLoading.style.top = `${elTarget.offsetTop}px`;
-    elLoading.style.left = `${elTarget.offsetLeft}px`;
-    elLoading.style.height = `${elTarget.clientHeight}px`;
-    elLoading.style.width = `${elTarget.clientWidth}px`;
-  
-    elTarget.appendChild(elLoading);
-    cycleMessages(messages);
+      elTarget.appendChild(elLoading);
+      cycleMessages(messages);
+    }
   }
   else {
     // Loading is INACTIVE
-    document.querySelector(`#${target} .loading`).remove();
+    document.querySelector(`#${target} .loading`)?.remove();
   }
 }
 

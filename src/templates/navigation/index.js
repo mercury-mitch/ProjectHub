@@ -1,60 +1,80 @@
 import { teamTemplate }      from '../team'
-import { projectTemplate }   from '../project'
+import { settingsTemplate }  from '../settings'
 import { marketingTemplate } from '../marketing'
+import { dashboardTemplate } from '../dashboard'
 
 
 const navigationItems = {
-  team:      { title: 'Team',      icon: 'users-crown', content: teamTemplate() },
-  marketing: { title: 'Marketing', icon: 'megaphone', content: marketingTemplate() }
+  dashboard: { 
+    title: 'Dashboard', 
+    icon: 'tachometer-alt', 
+    content: dashboardTemplate()
+  },
+  team: { 
+    title: 'Team', 
+    icon: 'users-crown', 
+    content: teamTemplate() 
+  },
+  marketing: { 
+    title: 'Marketing', 
+    icon: 'megaphone', 
+    content: marketingTemplate() 
+  },
+  settings: { 
+    title: 'Settings', 
+    icon: 'cog', 
+    content: settingsTemplate() 
+  }
 }
 
-{/* <nav class="navbar navbar-expand-md navbar-light bg-light">
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <div class="row navbar-row">
-        <div class="col-md-4 col-lg-3 navbar-row-col">
-          <div class="nav-logo">
-            <i class="fad fa-planet-ringed fa-2x"></i>
-            <h5>Mercury Hub</h5>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-8 col-lg-9"></div>
-      </div>
-    </div>
-  </div>
-</nav> */}
 export const navigation = () => `
-  <div class="row navigation-content">
-    <div class="col-md-4 col-lg-3 navigation-list">
-      <div class="list-group" id="navigation-list-tab" role="tablist">
-        ${Object.keys(navigationItems).map((navigationItem, i) => `
+  <h3 class="project-name desktop" data-role="dashboard-project-name"></h3>
+
+  <div class="navigation-content">
+    <div class="navigation-list-container">
+      <div class="navigation-list">
+        <div class="list-group" id="navigation-list-tab" role="tablist">
           <button 
-            class="list-group-item list-group-item-action ${i === 0 ? 'active' : ''}" 
-            id="navigation-list-${navigationItem}-list" 
-            data-bs-toggle="list" 
-            role="tab" 
-            aria-controls="navigation-list-${navigationItem}"
+            class="list-group-item list-group-item-action" 
+            id="navigation-list-hamburger"
           >
-            <i class="fad fa-${Object.values(navigationItems)[i].icon}"></i>
-            ${Object.values(navigationItems)[i].title}
+            <i class="fal fa-bars"></i>
+            </span>
           </button>
-        `).join('')}
+          ${Object.keys(navigationItems).map((navigationItem, i) => `
+            <button 
+              class="list-group-item list-group-item-action" 
+              id="navigation-list-${navigationItem}-list" 
+              data-bs-toggle="list" 
+              role="tab" 
+              aria-controls="navigation-list-${navigationItem}"
+            >
+              <i class="fad fa-${Object.values(navigationItems)[i].icon}"></i>
+              <span class="navigation-list-item-title">
+              ${Object.values(navigationItems)[i].title}
+              </span>
+            </button>
+          `).join('')}
         </div>
         <div class="list-group" id="navigation-list-project" role="tablist">
-          <div class="project-card">
-            <i class="fad fa-briefcase"></i>
-            <h5 id="active-project"></h5>
-          </div>
-          <button type="button" id="all-projects-btn">All Projects</button>
+          <i class="fad fa-globe-americas list-group-item" id="all-projects-btn"></i>
         </div>
+
+      </div>
+      
+      <h3 class="project-name mobile" data-role="dashboard-project-name"></h3>
     </div>
-    <div class="col-sm-12 col-md-8 col-lg-9 tab-content-col">
+    <div class="tab-content-col">
       <ul class="tab-content" id="navigation-nav-tabContent">
       ${Object.keys(navigationItems).map((navigationItem, i) => `
-        <li class="tab-pane fade show ${i === 0 ? 'active' : ''}" id="navigation-list-${navigationItem}" role="tabpanel" aria-labelledby="navigation-list-${navigationItem}-list">${Object.values(navigationItems)[i].content}</li>
+        <li 
+          role="tabpanel" 
+          id="navigation-list-${navigationItem}" 
+          class="tab-pane fade show" 
+          aria-labelledby="navigation-list-${navigationItem}-list"
+        >
+            ${Object.values(navigationItems)[i].content}
+        </li>
       `).join('')}
       </ul>
     </div>
