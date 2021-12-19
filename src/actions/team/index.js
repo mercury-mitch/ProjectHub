@@ -1,5 +1,5 @@
 import { teamTabsTemplate, teamTabContentsTemplate } from "../../templates/team";
-import { MercuryHub } from '../../../routes/firebase/index'
+import { MercuryHub } from '../../routes/firebase/index'
 
 export const team = () => {
   const elTeamTabs = document.getElementById('team-tabs');

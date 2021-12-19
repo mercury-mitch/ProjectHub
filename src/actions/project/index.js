@@ -1,5 +1,5 @@
 import { addElementToRoot } from "../../utils/RootHelpers";
-import { MercuryHub }       from "../../../routes/firebase";
+import { MercuryHub }       from "../../routes/firebase";
 import { loading }          from "../../utils/loading";
 import { templates }        from "../../templates";
 import { actions }          from "..";

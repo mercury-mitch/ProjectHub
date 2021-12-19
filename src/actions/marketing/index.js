@@ -1,4 +1,4 @@
-import { MercuryHub } from "../../../routes/firebase";
+import { MercuryHub } from "../../routes/firebase";
 
 export const marketing = project => {
   const elCreateCampaign = document.getElementById('create-marketing-campaign');

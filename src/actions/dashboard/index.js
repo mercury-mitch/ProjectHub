@@ -1,4 +1,4 @@
-import { MercuryHub }    from '../../../routes/firebase'
+import { MercuryHub }    from '../../routes/firebase'
 import { MercuryCharts } from "../../utils/charts";
 
 

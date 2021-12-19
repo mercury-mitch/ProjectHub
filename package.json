@@ -1,10 +1,11 @@
 {
   "name": "projecthub",
-  "version": "1",
+  "version": "1.0.0",
   "description": "Front end module for rapidly deploying Mercury to your app",
   "repository": "https://github.com/mercury-mitch/ProjectHub",
-  "author": "MercuryMitch <mitch@mercury-hub.org>",
-  "private": true,
+  "author": "",
+  "license": "Apache-2.0",
+  "private": false,
   "scripts": {
     "build": "webpack --config webpack.prod.config.js",
     "start": "webpack-dev-server --open"
